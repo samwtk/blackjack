@@ -3,6 +3,7 @@ members = [
   "e2e",
   "metrics",
   "helloworld",
+  "blackjack",
 ]
 
 resolver = "3"
@@ -25,6 +26,7 @@ missing_docs = "warn"
 [workspace.dependencies]
 axum = { version = "0.8.8", default-features = false }
 serde_json = "1.0.142"
+serde = { version = "1.0", default-features = false, features = ["derive"] }
 tokio = { version = "1.47", default-features = false }
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
@@ -33,3 +35,7 @@ tower-http = { version = "0.6", features = ["trace"] }
 http-body-util = "0.1"
 pin-project-lite = "0.2"
 prometheus = { version = "0.13", default-features = false }
+uuid = { version = "1", features = ["v4", "serde"] }
+rand = "0.8"
+rand_core = { version = "0.6", features = ["getrandom"] }
+clap = { version = "4", features = ["derive"] }
