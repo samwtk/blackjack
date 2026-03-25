@@ -2,6 +2,10 @@ out/helloworld/index.json: \
 	$(shell git ls-files images/helloworld src)
 	$(call build,helloworld)
 
+out/blackjack/index.json: \
+	$(shell git ls-files images/blackjack src)
+	$(call build,blackjack)
+
 define build_context
 $$( \
 	mkdir -p out; \
