@@ -59,9 +59,9 @@ jobs:
       - name: Upload to GHCR
         run: |
           for tag in ${tags}; do
-              docker tag "tkhq-tvc-helloworld/${{ matrix.target.name }}:latest" "ghcr.io/tkhq/${{ matrix.target.name }}:${tag}"
+              docker tag "tkhq-tvc-helloworld/${{ matrix.target.name }}:latest" "ghcr.io/${{ github.repository_owner }}/${{ matrix.target.name }}:${tag}"
           done
-          docker image push --all-tags "ghcr.io/tkhq/${{ matrix.target.name }}"
+          docker image push --all-tags "ghcr.io/${{ github.repository_owner }}/${{ matrix.target.name }}"
 
   helloworld:
     name: Build helloworld image
